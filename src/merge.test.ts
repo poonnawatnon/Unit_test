@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { merge } from "../src/merge.js";
+import { merge } from "./merge.js";
 
 function assertNoSortSpy() {
   const original = Array.prototype.sort;
@@ -30,7 +30,6 @@ describe("merge", () => {
   });
 
   it("handles duplicates and ties", () => {
-    // 8 values total: two 2s from each ascending array, two 2s from descending, one 2 in c3 → five 2s
     expect(merge([1, 2, 2], [4, 2, 2], [2, 3])).toEqual([1, 2, 2, 2, 2, 2, 3, 4]);
   });
 

@@ -1,13 +1,3 @@
-/**
- * Merges three integer arrays into one ascending-sorted array.
- *
- * Preconditions (caller responsibility):
- * - `collection_1` sorted ascending (min → max)
- * - `collection_2` sorted descending (max → min)
- * - `collection_3` sorted ascending (min → max)
- *
- * No sorting helpers are used — only a linear multi-pointer merge.
- */
 export function merge(
   collection_1: number[],
   collection_2: number[],
@@ -20,7 +10,7 @@ export function merge(
   const out: number[] = new Array(total);
 
   let i1 = 0;
-  let i2 = n2 - 1; // walk backward: descending input → ascending stream
+  let i2 = n2 - 1;
   let i3 = 0;
   let w = 0;
 

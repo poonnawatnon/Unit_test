@@ -1,58 +1,13 @@
-# merge-sorted-collections
+# Merge
 
-TypeScript project implementing:
+`merge(collection_1, collection_2, collection_3): number[]`
 
-```ts
-merge(collection_1: number[], collection_2: number[], collection_3: number[]): number[]
-```
+- `collection_1`, `collection_3`: ascending  
+- `collection_2`: descending  
+- Result: all values ascending. No `Array.prototype.sort` (tests guard one call site).
 
-**Input assumptions**
-
-- `collection_1` and `collection_3` are sorted **ascending** (smallest → largest).
-- `collection_2` is sorted **descending** (largest → smallest).
-
-**Output**
-
-- One array containing every element from the three inputs, sorted **ascending**.
-
-**Implementation**
-
-- Linear-time **three-pointer merge** (no `Array.prototype.sort` or other sort helpers).
-
-## Setup
-
-Requires [Node.js](https://nodejs.org/) 20+ (LTS recommended).
-
-```powershell
-cd C:\Users\poon\Projects\merge-sorted-collections
-git init
+```bash
 npm install
-```
-
-## Run unit tests
-
-```powershell
 npm test
+npm run typecheck
 ```
-
-Watch mode:
-
-```powershell
-npm run test:watch
-```
-
-## Run the small demo
-
-```powershell
-npm start
-```
-
-This prints the merged result for a fixed example in `src/demo.ts`.
-
-## Typecheck
-
-```powershell
-npm run build
-```
-
-(`tsc` is configured with `noEmit: true` for fast typechecking only.)
